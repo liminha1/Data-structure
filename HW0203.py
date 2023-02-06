@@ -1,4 +1,10 @@
 def i_t(tk, tv):
+    '''
+    순서 정렬하고 리스트 합치는 함수
+    :param tk: str
+    :param tv: int
+    :return: void
+    '''
     to_tv = [total[i][1] for i in range(len(total))]
     to_tv.append(tv)
     to_tv.sort()
