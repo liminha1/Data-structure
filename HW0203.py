@@ -10,10 +10,10 @@ def i_t(tk, tv):
         total[i] = total[i-1]
         total[i-1] = None
 
-    total[idx] = (tk, tv)
+    total[idx] = [tk, tv]
 
 
-total = [('다현', 200), ('정연', 150), ('쯔위', 90), ('사나', 30), ('지효', 15)]
+total = [['다현', 200], ['정연', 150], ['쯔위', 90], ['사나', 30], ['지효', 15]]
 
 if __name__ == "__main__":
     while True:
