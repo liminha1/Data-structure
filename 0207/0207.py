@@ -27,6 +27,14 @@ node6 = TreeNode()
 node6.data = '선미'
 node3.left = node6
 
+node7 = TreeNode()
+node7.data = '다현'
+node4.right = node7
+
+node8 = TreeNode()
+node8.data = '사나'
+node6.right = node8
+
 def preorder(node) :
     if node == None:
         return
