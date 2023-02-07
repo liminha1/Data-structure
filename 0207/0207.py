@@ -32,4 +32,21 @@ for name in nameAry[1:] :
 
     memory.append(node)
 
-print("이진 탐색 트리 구성 완료!")
+findName = '아무무'
+
+current = root
+
+while True :
+    if findName == current.data:
+        print(findName, '을(를) 찾음.')
+        break
+    elif findName < current.data :
+        if current.left == None :
+            print(findName, '이(가) 트리에 없음')
+            break
+        current = current.left
+    else :
+        if current.right == None :
+            print(findName, '이(가) 트리에 없음')
+            break
+        current = current.right
