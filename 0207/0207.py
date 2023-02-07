@@ -32,7 +32,7 @@ for name in nameAry[1:] :
 
     memory.append(node)
 
-findName = '빨강'
+findName = '빨강파랑'
 
 current = root
 
