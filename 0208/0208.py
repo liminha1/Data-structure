@@ -39,6 +39,25 @@ def insertNode(findData, insertData) :
     node.data = insertData
     current.link = node
 
+def deleteNode(deleteData) :
+    global memory, head, current, pre
+
+    if head.data == deleteData :
+        current = head
+        head = head.link
+        del(current)
+        return
+
+    current = head
+    while current.link != None:
+        pre = current
+        current = current.link
+        if current.data ==deleteData :
+            pre.link = current.link
+            del(current)
+            return
+
+
 memory = []
 head, current, pre = None, None, None
 dataArray = ["다다", "정정", "쯔쯔", "사사", "지지"]
@@ -59,11 +78,14 @@ if __name__ == "__main__" :
 
     printNodes(head)
 
-    insertNode("다다", "화화")
+    deleteNode("다다")
     printNodes(head)
 
-    insertNode("사사", "솔솔")
+    deleteNode("쯔쯔")
     printNodes(head)
 
-    insertNode("재재", "문문")
+    deleteNode("지지")
+    printNodes(head)
+
+    deleteNode("재남")
     printNodes(head)
