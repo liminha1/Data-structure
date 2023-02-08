@@ -61,7 +61,17 @@ def deleteNode(deleteData) :
 
     print('# 삭제된 노드가 없음 #')
 
+def findNode(findData) :
+    global memory, head, current, pre
 
+    current = head
+    if current.data == findData :
+        return current
+    while current.link != None:
+        current = current.link
+        if current.data == findData:
+            return current
+    return Node()
 
 memory = []
 head, current, pre = None, None, None
@@ -83,14 +93,11 @@ if __name__ == "__main__" :
 
     printNodes(head)
 
-    deleteNode("다다")
-    printNodes(head)
+    fNode = findNode("다다")
+    print(fNode.data)
 
-    deleteNode("쯔쯔")
-    printNodes(head)
+    fNode = findNode("쯔쯔")
+    print(fNode.data)
 
-    deleteNode("지지")
-    printNodes(head)
-
-    deleteNode("재남")
-    printNodes(head)
+    fNode = findNode("재재")
+    print(fNode.data)
