@@ -73,31 +73,43 @@ def findNode(findData) :
             return current
     return Node()
 
+def makeSimpleLinkedList(namePhone) :
+    global memory, head, current, pre
+    printNodes(head)
+
+    node = Node()
+    node.data = namePhone
+    memory.append(node)
+    if head == None :
+        head = node
+        return
+
+    if head.data[0] > namePhone[0] :
+        node.link = head
+        head = node
+        return
+
+    current = head
+    while current.link != None:
+        pre = current
+        current = current.link
+        if current.data[0] > namePhone[0]:
+            pre.link = node
+            node.link = current
+            return
+
+    current.link = node
+
+
+
 memory = []
 head, current, pre = None, None, None
-dataArray = ["다다", "정정", "쯔쯔", "사사", "지지"]
+dataArray = [["지지", "010-1111-1111"], ["정정", "010-2222-2222"], ["뷔뷔", "010-3333-3333"], ["슈슈", "010-4444-4444"], ["진진", "010-5555-5555"]]
+
 
 if __name__ == "__main__" :
 
-    node = Node()
-    node.data = dataArray[0]
-    head = node
-    memory.append(node)
-
-    for data in dataArray[1:]:
-        pre = node
-        node = Node()
-        node.data = data
-        pre.link = node
-        memory.append(node)
+    for data in dataArray:
+        makeSimpleLinkedList(data)
 
     printNodes(head)
-
-    fNode = findNode("다다")
-    print(fNode.data)
-
-    fNode = findNode("쯔쯔")
-    print(fNode.data)
-
-    fNode = findNode("재재")
-    print(fNode.data)
