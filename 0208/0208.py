@@ -23,6 +23,11 @@ node5 = Node()
 node5.data = "지지"
 node4.link = node5
 
+newNode = Node()
+newNode.data = "임준"
+newNode.link = node2.link
+node2.link = newNode
+
 current = node1
 print(current.data, end=' ')
 while current.link != None :
