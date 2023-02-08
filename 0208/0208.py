@@ -46,16 +46,21 @@ def deleteNode(deleteData) :
         current = head
         head = head.link
         del(current)
+        print('# 첫 노드가 삭제됨 #')
         return
 
     current = head
     while current.link != None:
         pre = current
         current = current.link
-        if current.data ==deleteData :
+        if current.data == deleteData :
             pre.link = current.link
             del(current)
+            print('# 중간 노드가 삭제됨 #')
             return
+
+    print('# 삭제된 노드가 없음 #')
+
 
 
 memory = []
