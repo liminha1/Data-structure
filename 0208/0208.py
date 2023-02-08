@@ -4,29 +4,32 @@ class Graph() :
         self.SIZE = size
         self.graph = [ [0 for _ in range(size)] for _ in range(size)]
 
-# G1, G3 = None, None
-G1 = None
-
-G1 = Graph(4)
-G1.graph[0][3] = 1
-G1.graph[1][2] = 1; G1.graph[1][3] = 1
-G1.graph[2][1] = 1
-G1.graph[3][0] = 1; G1.graph[3][1] = 1
-
-print('## G1 무방향 그래프 ##')
-for row in range(4) :
-    for col in range(4) :
-        print(G1.graph[row][col], end = ' ')
+def printGraph(g) :
+    print(' ', end=' ')
+    for v in range(g.SIZE) :
+        print(nameAry[v], end=' ')
+    print()
+    for row in range(g.SIZE) :
+        print(nameAry[row], end=' ')
+        for col in range(g.SIZE) :
+            print(g.graph[row][col], end=' ')
+        print()
     print()
 
-# G3 = Graph(4)
-# G3.graph[0][1] = 1; G3.graph[0][2] = 1
-# G3.graph[3][0] = 1; G3.graph[3][2] = 1
-#
-# print('## G3 방향 그래프 ##')
-# for row in range(4):
-#     for col in range(4):
-#         print(G3.graph[row][col], end=' ')
-#     print()
+G1 = None
+nameAry = ['문문', '솔솔', '휘휘', '쯔쯔', '선선', '화화']
+문문, 솔솔, 휘휘, 쯔쯔, 선선, 화화 = 0, 1, 2, 3, 4, 5
+
+gSize = 6
+G1 = Graph(gSize)
+G1.graph[문문][솔솔] = 1; G1.graph[문문][휘휘] = 1
+G1.graph[솔솔][문문] = 1; G1.graph[솔솔][쯔쯔] = 1
+G1.graph[휘휘][문문] = 1; G1.graph[휘휘][쯔쯔] = 1
+G1.graph[쯔쯔][솔솔] = 1; G1.graph[쯔쯔][휘휘] = 1; G1.graph[쯔쯔][선선] = 1
+G1.graph[선선][쯔쯔] = 1; G1.graph[선선][화화] = 1
+G1.graph[화화][쯔쯔] = 1; G1.graph[화화][선선] = 1
+
+print('## G1 무방향 그래프 ##')
+printGraph(G1 )
 
 
