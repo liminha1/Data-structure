@@ -1,45 +1,31 @@
-class Graph() :
+class Node() :
 
-    def __init__ (self, size) :
-        self.SIZE = size
-        self.graph = [ [0 for _ in range(size)] for _ in range(size)]
+    def __init__ (self) :
+        self.data = None
+        self.link = None
 
-G1 = None
-stack = []
-visitedAry = []
+node1 = Node()
+node1.data = "다다"
 
-G1 = Graph(4)
-G1.graph[0][2] = 1; G1.graph[0][3] = 1
-G1.graph[1][2] = 1
-G1.graph[2][0] = 1; G1.graph[2][1] = 1; G1.graph[2][3] = 1
-G1.graph[3][0] = 1; G1.graph[3][2] = 1
+node2 = Node()
+node2.data = "정정"
+node1.link = node2
 
-print('## G1 무방향 그래프 ##')
-for row in range(4) :
-    for col in range(4):
-        print(G1.graph[row][col], end= ' ')
-    print()
+node3 = Node()
+node3.data = "쯔쯔"
+node2.link = node3
 
-current = 0
-stack.append(current)
-visitedAry.append(current)
+node4 = Node()
+node4.data = "사사"
+node3.link = node4
 
-while (len(stack) != 0):
-    next = None
-    for vertex in range(4):
-        if G1.graph[current][vertex] == 1:
-            if vertex in visitedAry :
-                pass
-            else :
-                next = vertex
-                break
-    if next != None:
-        current = next
-        stack.append(current)
-        visitedAry.append(current)
-    else:
-        current = stack.pop()
+node5 = Node()
+node5.data = "지지"
+node4.link = node5
 
-print('방문 순서 -->', end=' ')
-for i in visitedAry:
-    print(chr(ord('1')+i), end='  ')
+print(node1.data, end = ' ')
+print(node1.link.data, end=' ')
+print(node1.link.link.data, end = ' ')
+print(node1.link.link.link.data, end = ' ')
+print(node1.link.link.link.link.data, end = ' ')
+
