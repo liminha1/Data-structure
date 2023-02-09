@@ -1,32 +1,13 @@
-queue = ["화화", "솔솔", "문문", None, None]
+def isQueueFull() :
+	global SIZE, queue, front, rear
+	if reat == SIZE-1 :
+		return True
+	else :
+		return False
+
+SIZE = 5
+queue = ["화화", "솔솔", "문문", "휘휘", "선선"]
 front = -1
-rear = 2
+reat = 4
 
-print("----- 큐 상태 -----")
-print('[출구] <-- ', end = '')
-for i in range(0, len(queue), 1) :
-	print(queue[i], end=' ')
-print( ' <-- [입구] ')
-print('------------------')
-
-front += 1
-data = queue[front]
-queue[front] = None
-print('deQueue --> ', data)
-
-front += 1
-data = queue[front]
-queue[front] = None
-print('deQueue --> ', data)
-
-front += 1
-data = queue[front]
-queue[front] = None
-print('deQueue --> ', data)
-print('-------------------')
-
-print("----- 큐 상태 -----")
-print('[출구] <-- ', end = '')
-for i in range(0, len(queue), 1) :
-	print(queue[i], end=' ')
-print( ' <-- [입구] ')
+print("큐가 꽉 찼는지 여부 ==>", isQueueFull())
