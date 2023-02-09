@@ -1,23 +1,11 @@
-# def isStackFull() :
-#     global SIZE, stack, top
-#     if top >= SIZE-1 :
-#         return True
-#     else :
-#         return False
-
-def push(data) :
+def isStackEmpty() :
     global SIZE, stack, top
-    if top >= SIZE-1 :
-        print("스택이 꽉 찼습니다.")
-        return
-    top += 1
-    stack[top] = data
+    if top == -1 :
+        return True
+    else :
+        return False
 
 SIZE = 5
-stack = ["커커", "녹녹", "꿀꿀", "콜콜", None]
-top = 3
-
-print(stack)
-push("환환")
-print(stack)
-push("게토게토")
+stack = [ None for _ in range(SIZE)]
+top = -1
+print("스택이 비었는지 여부 =>", isStackEmpty())
