@@ -5,8 +5,19 @@ def isStackFull() :
     else :
         return False
 
-SIZE = 5
-stack = ["커커", "녹녹", "꿀꿀", "콜콜", "환환"]
-top = 4
+def push(data) :
+    global SIZE, stack, top
+    if isStackFull():
+        print("스택이 꽉 찼습니다.")
+        return
+    top += 1
+    stack[top] = data
 
-print("스택이 꽉 찼는지 여부 ==>", isStackFull())
+SIZE = 5
+stack = ["커커", "녹녹", "꿀꿀", "콜콜", None]
+top = 3
+
+print(stack)
+push("환환")
+print(stack)
+push("게토게토")
