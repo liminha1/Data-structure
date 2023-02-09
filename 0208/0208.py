@@ -84,7 +84,7 @@ def makeSimpleLinkedList(namePhone) :
         head = node
         return
 
-    if head.data[0] > namePhone[0] :
+    if head.data[1] > namePhone[1] :
         node.link = head
         head = node
         return
@@ -93,7 +93,7 @@ def makeSimpleLinkedList(namePhone) :
     while current.link != None:
         pre = current
         current = current.link
-        if current.data[0] > namePhone[0]:
+        if current.data[1] > namePhone[1]:
             pre.link = node
             node.link = current
             return
@@ -104,7 +104,7 @@ def makeSimpleLinkedList(namePhone) :
 
 memory = []
 head, current, pre = None, None, None
-dataArray = [["지지", "010-1111-1111"], ["정정", "010-2222-2222"], ["뷔뷔", "010-3333-3333"], ["슈슈", "010-4444-4444"], ["진진", "010-5555-5555"]]
+dataArray = [["지지", "180"], ["정정", "177"], ["뷔뷔", "183"], ["슈슈", "175"], ["진진", "179"]]
 
 
 if __name__ == "__main__" :
