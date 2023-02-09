@@ -5,7 +5,22 @@ def isStackEmpty() :
     else :
         return False
 
+def pop() :
+    global SIZE, stack, top
+    if isStackEmpty():
+        print("스택이 비었습니다.")
+        return None
+    data = stack[top]
+    stack[top] = None
+    top -= 1
+    return data
+
 SIZE = 5
-stack = [ None for _ in range(SIZE)]
-top = -1
-print("스택이 비었는지 여부 =>", isStackEmpty())
+stack = ["커커", None, None, None, None]
+top = 0
+
+print(stack)
+retData = pop()
+print("추출한 데이터 -->", retData)
+print(stack)
+retData = pop()
