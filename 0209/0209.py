@@ -1,26 +1,12 @@
-stack = ["커커", "녹녹", "꿀꿀", None, None]
-top = 2
+def isStackFull() :
+    global SIZE, stack, top
+    if top >= SIZE-1 :
+        return True
+    else :
+        return False
 
-print("----- 스택 상태 -----")
-for i in range(len(stack) -1, -1, -1) :
-    print(stack[i])
+SIZE = 5
+stack = ["커커", "녹녹", "꿀꿀", "콜콜", "환환"]
+top = 4
 
-print("---------------------")
-data = stack[top]
-stack[top] = None
-top -= 1
-print("pop -->", data)
-
-data = stack[top]
-stack[top] = None
-top -= 1
-print("pop -->", data)
-
-data = stack[top]
-stack[top] = None
-top -= 1
-print("pop -->", data)
-
-print("----- 스택 상태 -----")
-for i in range(len(stack) -1, -1, -1) :
-    print(stack[i])
+print("스택이 꽉 찼는지 여부 ==>", isStackFull())
