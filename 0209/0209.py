@@ -1,14 +1,29 @@
-queue = [None, None, None, None, None]
-front = rear = -1
+queue = ["화화", "솔솔", "문문", None, None]
+front = -1
+rear = 2
 
-rear += 1
-queue[rear] = "화화"
+print("----- 큐 상태 -----")
+print('[출구] <-- ', end = '')
+for i in range(0, len(queue), 1) :
+	print(queue[i], end=' ')
+print( ' <-- [입구] ')
+print('------------------')
 
-rear += 1
-queue[rear] = "솔솔"
+front += 1
+data = queue[front]
+queue[front] = None
+print('deQueue --> ', data)
 
-rear += 1
-queue[rear] = "문문"
+front += 1
+data = queue[front]
+queue[front] = None
+print('deQueue --> ', data)
+
+front += 1
+data = queue[front]
+queue[front] = None
+print('deQueue --> ', data)
+print('-------------------')
 
 print("----- 큐 상태 -----")
 print('[출구] <-- ', end = '')
