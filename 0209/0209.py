@@ -1,26 +1,23 @@
-# def isStackEmpty() :
-#     global SIZE, stack, top
-#     if top == -1 :
-#         return True
-#     else :
-#         return False
-
-def pop() :
+def isStackEmpty() :
     global SIZE, stack, top
     if top == -1 :
+        return True
+    else :
+        return False
+
+def peek() :
+    global SIZE, stack, top
+    if isStackEmpty():
         print("스택이 비었습니다.")
         return None
-    data = stack[top]
-    stack[top] = None
-    top -= 1
-    return data
+    return stack[top]
+
 
 SIZE = 5
-stack = ["커커", None, None, None, None]
-top = 0
+stack = ["커커", "녹녹", "꿀꿀", None, None]
+top = 2
 
 print(stack)
-retData = pop()
-print("추출한 데이터 -->", retData)
+retData = peek()
+print("top의 데이터 확인 -->", retData)
 print(stack)
-retData = pop()
