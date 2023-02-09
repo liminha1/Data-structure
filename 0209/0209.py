@@ -1,13 +1,13 @@
-def isStackFull() :
-    global SIZE, stack, top
-    if top >= SIZE-1 :
-        return True
-    else :
-        return False
+# def isStackFull() :
+#     global SIZE, stack, top
+#     if top >= SIZE-1 :
+#         return True
+#     else :
+#         return False
 
 def push(data) :
     global SIZE, stack, top
-    if isStackFull():
+    if top >= SIZE-1 :
         print("스택이 꽉 찼습니다.")
         return
     top += 1
