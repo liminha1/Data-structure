@@ -1,14 +1,25 @@
-stack = [None, None, None, None, None]
-top = -1
+stack = ["커커", "녹녹", "꿀꿀", None, None]
+top = 2
 
-top += 1
-stack[top] = "커커"
+print("----- 스택 상태 -----")
+for i in range(len(stack) -1, -1, -1) :
+    print(stack[i])
 
-top += 1
-stack[top] = "녹녹"
+print("---------------------")
+data = stack[top]
+stack[top] = None
+top -= 1
+print("pop -->", data)
 
-top += 1
-stack[top] = "꿀꿀"
+data = stack[top]
+stack[top] = None
+top -= 1
+print("pop -->", data)
+
+data = stack[top]
+stack[top] = None
+top -= 1
+print("pop -->", data)
 
 print("----- 스택 상태 -----")
 for i in range(len(stack) -1, -1, -1) :
