@@ -13,12 +13,16 @@ def enQueue(data) :
 	rear += 1
 	queue[rear] = data
 
-SIZE = 5
-queue = ["화화", "솔솔", "문문", "휘휘", None]
-front = -1
-rear = 3
+def isQueueEmpty() :
+	global SIZE, queue, front, rear
+	if front == rear:
+		return True
+	else:
+		return False
 
-print(queue)
-enQueue("선선")
-print(queue)
-enQueue("재재")
+SIZE = 5
+queue = [ None for _ in range(SIZE)]
+front = -1
+rear = -1
+
+print("큐가 비었는지 여부 ==>", isQueueEmpty())
