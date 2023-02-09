@@ -1,13 +1,13 @@
-def isStackEmpty() :
-    global SIZE, stack, top
-    if top == -1 :
-        return True
-    else :
-        return False
+# def isStackEmpty() :
+#     global SIZE, stack, top
+#     if top == -1 :
+#         return True
+#     else :
+#         return False
 
 def pop() :
     global SIZE, stack, top
-    if isStackEmpty():
+    if top == -1 :
         print("스택이 비었습니다.")
         return None
     data = stack[top]
